@@ -1,5 +1,5 @@
 {
-  "name": "@bugsyhq/skimmer",
+  "name": "@bugsyhq/skim-s3-bucket",
   "version": "0.1.0",
   "private": true,
   "description": "Skim objects from S3 or compatible buckets",
@@ -7,16 +7,15 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bugsyhq/skimmer.git"
+    "url": "git+https://github.com/bugsyhq/skim-s3-bucket.git"
   },
   "keywords": [
     "actions",
-    "skimmer",
     "skim",
     "prune",
     "s3",
-    "object",
-    "bucket"
+    "bucket",
+    "object"
   ],
   "author": "Bugsy",
   "license": "MIT",

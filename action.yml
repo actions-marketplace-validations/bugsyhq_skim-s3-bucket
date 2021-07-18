@@ -1,4 +1,4 @@
-name: 'Skimmer'
+name: 'Skim S3 Bucket'
 description: 'Skim objects from S3 or compatible buckets'
 inputs:
   access-key-id:
