@@ -1,0 +1,25 @@
+name: 'Skimmer'
+description: 'Skim objects from S3 or compatible buckets'
+inputs:
+  access-key-id:
+    description: 'AWS public access key'
+    required: true
+  secret-access-key:
+    description: 'AWS secret access key'
+    required: true
+  region:
+    description: 'Region of the S3 service'
+    required: true
+  endpoint:
+    description: 'Endpoint of the S3 service'
+    required: true
+  bucket:
+    description: 'Name of the bucket'
+    required: true
+  objects-to-keep:
+    description: 'Number of objects to keep'
+    required: false
+    default: 1
+runs:
+  using: 'node12'
+  main: 'index.js'
