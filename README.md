@@ -31,7 +31,7 @@ Number of objects to keep. Defaults to 1
 ## Example usage
 
 ```yml
-uses: bugsyhq/skim-s3-bucket
+uses: bugsyhq/skim-s3-bucket@v0.1.1
 with:
   access-key-id: '...'
   secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
