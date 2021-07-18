@@ -1,37 +1,37 @@
-# Skimmer
+# Skim S3 Bucket
 
 This action skims old objects from S3 or compatible buckets.
 
 ## Inputs
 
-## `access-key-id`
+### `access-key-id`
 
 **Required** AWS public access key
 
-## `secret-access-key`
+### `secret-access-key`
 
 **Required** AWS secret access key
 
-## `region`
+### `region`
 
 **Required** Region of the S3 service
 
-## `endpoint`
+### `endpoint`
 
 **Required** Endpoint of the S3 service
 
-## `bucket`
+### `bucket`
 
 **Required** Name of the bucket
 
-## `objects-to-keep`
+### `objects-to-keep`
 
 Number of objects to keep. Defaults to 1
 
 ## Example usage
 
 ```yml
-uses: bugsyhq/skimmer
+uses: bugsyhq/skim-s3-bucket
 with:
   access-key-id: '...'
   secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
