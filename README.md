@@ -1,6 +1,8 @@
 # Skim S3 Bucket
 
-This action skims old objects from S3 or compatible buckets.
+This action removes (skims) old objects from S3 or compatible buckets. Perfect for temporary storage or backup environments where only recent objects are needed.
+
+This action can be run on a schedule to periodically remove old objects. Keep in mind that GitHub actions are not guaranteed to run, so this should not be used in time-sensitive situations.
 
 ## Inputs
 
@@ -31,12 +33,25 @@ Number of objects to keep. Defaults to 1
 ## Example usage
 
 ```yml
-uses: bugsyhq/skim-s3-bucket@v0.1.1
-with:
-  access-key-id: '...'
-  secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-  region: '...'
-  endpoint: 'https://...'
-  bucket:  '...'
-  objects-to-keep: 1
+# .github/workflows/skim_s3_bucket
+name: Skim S3 Bucket
+
+# Optional: Skim the bucket the first minute of every hour
+on:
+  schedule:
+    - cron: '1 * * * *'
+
+# Skim the bucket
+jobs:
+  skim-s3-bucket:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: bugsyhq/skim-s3-bucket@v0.1.2
+        with:
+          access-key-id: '...'
+          secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
+          region: '...'
+          endpoint: 'https://...'
+          bucket:  '...'
+          objects-to-keep: 1
 ```
